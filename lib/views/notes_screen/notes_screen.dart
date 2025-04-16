@@ -7,6 +7,7 @@ class Notes_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (){},child:Icon(Icons.add),),
       appBar:  AppBar(title: Text("hello"),actions: [Icon(Icons.search,size: 30,)],elevation: 0.0,),
       body:Expanded(
 
