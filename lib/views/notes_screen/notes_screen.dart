@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app_pr1/components/components.dart';
 import 'package:notes_app_pr1/views/note_view_body/note_view_body.dart';
 
 class Notes_screen extends StatelessWidget {
@@ -7,14 +8,19 @@ class Notes_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){},child:Icon(Icons.add),),
-      appBar:  AppBar(title: Text("hello"),actions: [Icon(Icons.search,size: 30,)],elevation: 0.0,),
-      body:Expanded(
+      floatingActionButton:Floating_button(icon:Icon(Icons.add),onPressed: (){
 
-        child: ListView.separated(itemBuilder: (context,index)=> NoteViewBody(),
-        itemCount: 10,
-          separatorBuilder: (context,index)=>Divider(height: 20,thickness: 0.0,color:Colors.transparent,),
-        ),
+        showModalBottomSheet(context: context, builder:(context)=>Bottom_sheet());
+      }),
+      appBar:  AppBar(title: Text("hello"),
+        actions: [Icon(Icons.search,size: 30,)],
+        elevation: 0.0,
+         scrolledUnderElevation: 0,
+        forceMaterialTransparency: true,
+      ),
+      body:ListView.separated(itemBuilder: (context,index)=> NoteViewBody(),
+      itemCount: 10,
+        separatorBuilder: (context,index)=>Divider(height: 20,thickness: 0.0,color:Colors.transparent,),
       ),
 
     );

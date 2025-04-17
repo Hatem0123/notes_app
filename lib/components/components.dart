@@ -32,3 +32,35 @@ Widget Note_item()=>Padding(
 
   ),
 );
+
+
+Widget Floating_button(
+{
+void Function()? onPressed,
+  Icon? icon
+}
+
+    )=> FloatingActionButton(onPressed:onPressed,child:icon,);
+Widget Bottom_sheet(
+{
+void Function()? onPressed,
+  Icon? icon
+}
+
+    )=> Container(
+  width: double.infinity,
+  height: 400,
+  decoration: BoxDecoration(
+  color: Colors.black26
+
+
+  ),
+  child: Column(
+    mainAxisSize: MainAxisSize.max,
+    
+    children: [
+      Text("hello")
+      
+    ],
+  ),
+);
